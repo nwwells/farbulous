@@ -22,5 +22,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://nwwells.github.io/farbulous"
+  "homepage": "http://farbulous.nwwells.com"
 }
