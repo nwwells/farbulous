@@ -19,13 +19,10 @@ const RgbSlider = (props) => (
 
 class App extends Component {
 
-  constructor () {
-    super();
-    this.state = {
-      red: 0,
-      green: 0,
-      blue: 0,
-    }
+  state = {
+    red: 0,
+    green: 0,
+    blue: 0,
   }
 
   render() {
