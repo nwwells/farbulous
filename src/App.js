@@ -1,21 +1,39 @@
+// @flow
+
 import React, { Component } from 'react';
-import {Slider} from "@blueprintjs/core/dist/components/slider/slider";
+import { Slider } from "@blueprintjs/core/dist/components/slider/slider";
 import '@blueprintjs/core/dist/blueprint.css';
 
 import './App.css';
 
 const rgb = (r,g,b) => `rgb(${r},${g},${b})`
 
-const RgbSlider = (props) => (
-  <Slider
-    min={0}
-    max={255}
-    stepSize={1}
-    labelStepSize={32}
-    showTrackFill={false}
-    {...props}
-  />
-)
+type ChangeHandler = (number) => void;
+
+type RgbRowProps = {
+  color: string,
+  value: number,
+  onChange: ChangeHandler,
+}
+
+const RgbRow = (props:RgbRowProps) => (
+  <tr>
+    <td>
+      {props.color.toUpperCase()}
+    </td>
+    <td>
+      <Slider
+        min={0}
+        max={255}
+        stepSize={1}
+        labelStepSize={32}
+        showTrackFill={false}
+        onChange={props.onChange}
+        value={props.value}
+      />
+    </td>
+  </tr>
+);
 
 class App extends Component {
 
@@ -32,48 +50,30 @@ class App extends Component {
         <div className="App-selectorPanel">
           <table>
             <tbody>
-              <tr>
-                <td>
-                  Red
-                </td>
-                <td>
-                  <RgbSlider
-                      onChange={this.getChangeHandler("red")}
-                      value={this.state.red}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Green
-                </td>
-                <td>
-                  <RgbSlider
-                      onChange={this.getChangeHandler("green")}
-                      value={this.state.green}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Blue
-                </td>
-                <td>
-                  <RgbSlider
-                      onChange={this.getChangeHandler("blue")}
-                      value={this.state.blue}
-                  />
-                </td>
-              </tr>
+              <RgbRow 
+                color={'red'}
+                value={this.state.red}
+                onChange={this.getChangeHandler('red')}
+              />
+              <RgbRow 
+                color={'green'}
+                value={this.state.green}
+                onChange={this.getChangeHandler('green')}
+              />
+              <RgbRow 
+                color={'blue'}
+                value={this.state.blue}
+                onChange={this.getChangeHandler('blue')}
+              />
             </tbody>
-          </table>          
+          </table>
         </div>
       </div>
     );
   }
 
-  getChangeHandler(key) {
-      return (value) => this.setState({ [key]: value });
+  getChangeHandler(primaryColorName: string): ChangeHandler {
+    return (value: number) => this.setState({ [primaryColorName]: value });
   }
 
 }
