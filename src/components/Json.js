@@ -1,7 +1,9 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 
-const Json = (props: mixed) => <pre>{JSON.stringify(props, undefined, 2)}</pre>;
+const Json: mixed => React.Node = props => (
+  <pre>{JSON.stringify(props, undefined, 2)}</pre>
+);
 
 export default Json;
