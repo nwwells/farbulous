@@ -1,26 +1,24 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Slider } from "@blueprintjs/core/dist/components/slider/slider";
+import { Slider } from '@blueprintjs/core/dist/components/slider/slider';
 import '@blueprintjs/core/dist/blueprint.css';
 
 import './App.css';
 
-const rgb = (r,g,b) => `rgb(${r},${g},${b})`
+const rgb = (r, g, b) => `rgb(${r},${g},${b})`;
 
-type ChangeHandler = (number) => void;
+type ChangeHandler = number => void;
 
 type RgbRowProps = {
   color: string,
   value: number,
-  onChange: ChangeHandler,
-}
+  onChange: ChangeHandler
+};
 
-const RgbRow = (props:RgbRowProps) => (
+const RgbRow = (props: RgbRowProps) => (
   <tr>
-    <td>
-      {props.color.toUpperCase()}
-    </td>
+    <td style={{ textTransform: 'capitalize' }}>{props.color}</td>
     <td>
       <Slider
         min={0}
@@ -36,31 +34,30 @@ const RgbRow = (props:RgbRowProps) => (
 );
 
 class App extends Component {
-
   state = {
     red: 0,
     green: 0,
-    blue: 0,
-  }
+    blue: 0
+  };
 
   render() {
-    const {red, green, blue} = this.state;
+    const { red, green, blue } = this.state;
     return (
-      <div className="App" style={{ backgroundColor: rgb(red, green, blue)}}>
+      <div className="App" style={{ backgroundColor: rgb(red, green, blue) }}>
         <div className="App-selectorPanel">
           <table>
             <tbody>
-              <RgbRow 
+              <RgbRow
                 color={'red'}
                 value={this.state.red}
                 onChange={this.getChangeHandler('red')}
               />
-              <RgbRow 
+              <RgbRow
                 color={'green'}
                 value={this.state.green}
                 onChange={this.getChangeHandler('green')}
               />
-              <RgbRow 
+              <RgbRow
                 color={'blue'}
                 value={this.state.blue}
                 onChange={this.getChangeHandler('blue')}
@@ -75,7 +72,6 @@ class App extends Component {
   getChangeHandler(primaryColorName: string): ChangeHandler {
     return (value: number) => this.setState({ [primaryColorName]: value });
   }
-
 }
 
 export default App;

@@ -59,30 +59,30 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ---
 
+- **[Running Tests](#running-tests)**
+  - **[Filename Conventions](#filename-conventions)**
+  - **[Command Line Interface](#command-line-interface)**
+  - **[Version Control Integration](#version-control-integration)**
+  - **[Writing Tests](#writing-tests)**
+  - **[Testing Components](#testing-components)**
+  - **[Using Third Party Assertion Libraries](#using-third-party-assertion-libraries)**
+  - **[Initializing Test Environment](#initializing-test-environment)**
+  - **[Focusing and Excluding Tests](#focusing-and-excluding-tests)**
+  - **[Coverage Reporting](#coverage-reporting)**
+  - **[Continuous Integration](#continuous-integration)**
+  - **[Disabling jsdom](#disabling-jsdom)**
+  - **[Snapshot Testing](#snapshot-testing)**
+  - **[Editor Integration](#editor-integration)**
+- **[Developing Components in Isolation](#developing-components-in-isolation)**
+  - **[Getting Started with Storybook](#getting-started-with-storybook)**
+  - **[Getting Started with Styleguidist](#getting-started-with-styleguidist)**
+- **[Making a Progressive Web App](#making-a-progressive-web-app)**
+  - **[Opting Out of Caching](#opting-out-of-caching)**
+  - **[Offline-First Considerations](#offline-first-considerations)**
+  - **[Progressive Web App Metadata](#progressive-web-app-metadata)**
 
 ---
 
-- [Running Tests](#running-tests)
-  - [Filename Conventions](#filename-conventions)
-  - [Command Line Interface](#command-line-interface)
-  - [Version Control Integration](#version-control-integration)
-  - [Writing Tests](#writing-tests)
-  - [Testing Components](#testing-components)
-  - [Using Third Party Assertion Libraries](#using-third-party-assertion-libraries)
-  - [Initializing Test Environment](#initializing-test-environment)
-  - [Focusing and Excluding Tests](#focusing-and-excluding-tests)
-  - [Coverage Reporting](#coverage-reporting)
-  - [Continuous Integration](#continuous-integration)
-  - [Disabling jsdom](#disabling-jsdom)
-  - [Snapshot Testing](#snapshot-testing)
-  - [Editor Integration](#editor-integration)
-- [Developing Components in Isolation](#developing-components-in-isolation)
-  - [Getting Started with Storybook](#getting-started-with-storybook)
-  - [Getting Started with Styleguidist](#getting-started-with-styleguidist)
-- [Making a Progressive Web App](#making-a-progressive-web-app)
-  - [Opting Out of Caching](#opting-out-of-caching)
-  - [Offline-First Considerations](#offline-first-considerations)
-  - [Progressive Web App Metadata](#progressive-web-app-metadata)
 - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
 - [Deployment](#deployment)
   - [Static Server](#static-server)
@@ -96,6 +96,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - **[Firebase](#firebase)**
 
 ---
+
   - [GitHub Pages](#github-pages)
   - [Heroku](#heroku)
   - [Netlify](#netlify)
