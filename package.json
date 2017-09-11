@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@blueprintjs/core": "^1.27.0",
+    "firebase": "^4.3.1",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
@@ -21,7 +22,8 @@
   "scripts": {
     "precommit": "lint-staged",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
+    "prestyleguide:deploy": "styleguidist build",
+    "styleguide:deploy": "gh-pages -d styleguide",
     "analyze": "source-map-explorer build/static/js/main.*",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -29,7 +31,7 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "firebase deploy"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

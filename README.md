@@ -84,13 +84,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [Serving Apps with Client-Side Routing](#serving-apps-with-client-side-routing)
   - [Building for Relative Paths](#building-for-relative-paths)
   - [Azure](#azure)
-
----
-
-  - **[Firebase](#firebase)**
-
----
-
+  - [Firebase](#firebase)
   - [GitHub Pages](#github-pages)
   - [Heroku](#heroku)
   - [Netlify](#netlify)
